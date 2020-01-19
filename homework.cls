@@ -4,6 +4,7 @@
 \LoadClass{article}
 \RequirePackage{fancyhdr}
 \RequirePackage{extramarks}
+\RequirePackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions{\relax}
@@ -12,13 +13,7 @@
 \newcommand{\course}[1]{\renewcommand{\@course}{#1}}
 \title{Homework}
 \author{Name}
-
-\topmargin=-0.45in
-\evensidemargin=0in
-\oddsidemargin=0in
-\textwidth=6.5in
-\textheight=9.0in
-\headsep=0.25in
+\date{Date}
 
 \pagestyle{fancy}
 \lhead{\@course}
@@ -35,8 +30,9 @@
 \renewcommand{\maketitle}{{
   \centering
   \thispagestyle{empty}
-  \LARGE{\textbf{\@course: \@title}}\\
-  \Large{\@author}\\
+  \LARGE{\textbf{\@course: \@title}} \\
+  \Large{\@date} \\
+  \Large{\@author} \\
 }}
 
 \newcommand{\enterproblemheader}[1]{
@@ -63,6 +59,7 @@
   \section{Problem \arabic{hmwkproblemcounter}}
   \setcounter{hmwkpartcounter}{1}
   \renewcommand{\part}{\subsubsection{\large Part \alph{hmwkpartcounter}}\stepcounter{hmwkpartcounter}}
+  \newcommand{\solution}{\subsubsection{\large Solution}}
   \enterproblemheader{hmwkproblemcounter}
 }{
   \exitproblemheader{hmwkproblemcounter}

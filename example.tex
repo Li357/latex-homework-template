@@ -1,0 +1,27 @@
+\documentclass{homework}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{cancel}
+
+\course{Number Theory}
+\title{Proof Set 1}
+\author{Andrew Li}
+\date{January 2020}
+
+\begin{document}
+  \maketitle
+
+  % 1
+  \begin{problem}
+    Determine a formula for $\displaystyle\sum_{k=1}^n \frac{1}{\sqrt{k}+\sqrt{k+1}}$ as a function of $n$.
+    
+    \solution
+    \begin{align*}
+      \sum_{k=1}^n \frac{1}{\sqrt{k}+\sqrt{k+1}} &= \sum_{k=1}^n \frac{1}{\sqrt{k}+\sqrt{k+1}} \cdot \frac{\sqrt{k}-\sqrt{k+1}}{\sqrt{k}-\sqrt{k+1}} \\
+      &= \sum_{k=1}^n \frac{\sqrt{k}-\sqrt{k+1}}{k-(k+1)} \\
+      &= \sum_{k=1}^n \sqrt{k+1}-\sqrt{k} \\
+      &= \left(\cancel{\sqrt{2}}-\sqrt{1}\right) + \left(\cancel{\sqrt{3}}-\cancel{\sqrt{2}}\right) + \cdots + \left(\sqrt{n+1}-\cancel{\sqrt{n}}\right) \\
+      &= \boxed{\sqrt{n+1}-\sqrt{1}}
+    \end{align*}
+  \end{problem}
+\end{document}
