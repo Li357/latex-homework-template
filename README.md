@@ -1,6 +1,6 @@
 # LaTeX Homework Template
 
-Document class for homework, based on [jdavis' template](https://github.com/jdavis/latex-homework-template). Configurable via commands.
+Document class for homework, based on [jdavis' template](https://github.com/jdavis/latex-homework-template). 
 
 ```tex
 \documentclass{homework}
@@ -11,5 +11,9 @@ Document class for homework, based on [jdavis' template](https://github.com/jdav
 
 \begin{document}
   \maketitle
+
+  …
 \end{document}
 ```
+
+<img src="./example.png">
