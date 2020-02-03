@@ -1,19 +1,26 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{homework}[2020/01/18 Homework class]
+\ProvidesClass{homework}[2020/02/02 Homework class]
 
 \LoadClass{article}
 \RequirePackage{fancyhdr}
 \RequirePackage{extramarks}
+\RequirePackage{datetime}
 \RequirePackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions{\relax}
+
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
 \newcommand{\@course}{Course}
 \newcommand{\course}[1]{\renewcommand{\@course}{#1}}
 \title{Homework}
 \author{Name}
-\date{Date}
+\date{\monthyeardate\today}
 
 \pagestyle{fancy}
 \lhead{\@course}
