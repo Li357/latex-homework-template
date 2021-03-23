@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{homework}[2020/02/02 Homework class]
+\ProvidesClass{homework}[2021/03/22 Homework class]
 
 \LoadClass{article}
 \RequirePackage{fancyhdr}
@@ -10,6 +10,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
+\RequirePackage{enumerate}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions{\relax}
@@ -54,7 +55,6 @@
 }
 
 \setcounter{secnumdepth}{0}
-\newcounter{hmwkpartcounter}
 \newcounter{hmwkproblemcounter}
 \setcounter{hmwkproblemcounter}{1}
 \nobreak\extramarks{Problem \arabic{hmwkproblemcounter}}{}\nobreak{}
@@ -64,8 +64,10 @@
     \setcounter{hmwkproblemcounter}{#1}
   \fi
   \section{Problem \arabic{hmwkproblemcounter}}
-  \setcounter{hmwkpartcounter}{1}
-  \renewcommand{\part}{\subsubsection{\large Part \alph{hmwkpartcounter}}\stepcounter{hmwkpartcounter}}
+  \newenvironment{parts}{
+    \begin{enumerate}[(a)]
+    \newcommand{\part}{\item}
+  }{\end{enumerate}}
   \newcommand{\solution}{\subsubsection{\large Solution}}
   \enterproblemheader{hmwkproblemcounter}
 }{
